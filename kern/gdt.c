@@ -33,6 +33,6 @@ void gdt_init(){
 
     gdt_set_gate(2, 0, 0x003FFFFF, 0x92, 0xCF); // data segment
 
-    set_gdt();
+    set_gdt();  // external function
 }
 
