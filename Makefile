@@ -2,7 +2,7 @@ all:
 	# remove previous build of the iso as mkrescue does not overwrite it
 	rm -f build/neobird.iso 	
 
-	mkdir build
+	mkdir -p build
 
 	# build & link boot and kernel files
 	i386-elf-as boot/boot.asm -o build/boot.o
