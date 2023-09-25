@@ -2,9 +2,9 @@
 x86 32-bit kernel & operating system
 
 # checklist
-- [] GDT
-- [] IDT
-- [] Keyboard I/O
+- [ ] GDT
+- [ ] IDT
+- [ ] Keyboard I/O
 
 # how to compile
 - get i386 cross compiler
