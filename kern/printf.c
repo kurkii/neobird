@@ -1,7 +1,6 @@
 #include <stdint.h>
 #include <stdarg.h>
 #include <stdbool.h>
-#include "printf.h"
 #include "stdio.c"
 
 #define FORMAT_LENGTH       1
@@ -25,7 +24,6 @@ int printf(const char *format_string, ...){
     int state = NORMAL;
     va_list a_list;
     va_start(a_list, format_string);
-    int i = 0;
     for(int i = 0; i < strlen(format_string); i++){
         char current = format_string[i]; // current char in string
         switch (state){
@@ -43,8 +41,7 @@ int printf(const char *format_string, ...){
                 switch (current) {
                     case 'd':
                     case 'i':
-                        terminal_puti((va_arg(a_list, int)));
-                        break;
+                        //terminal_puti((va_arg(a_list, int)));
                     case 's':
                         terminal_puts(va_arg(a_list, char*));
                         break;
@@ -65,4 +62,6 @@ int printf(const char *format_string, ...){
     
     va_end(a_list);
 
+
+    return 0;
 }

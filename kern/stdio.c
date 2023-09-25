@@ -88,7 +88,7 @@ int count_digits(int num){
 	return cnt;		
 }
 
-void terminal_puti(int i){
+/* void terminal_puti(int i){			// TO BE ADDED
     
-}
+} */
 
