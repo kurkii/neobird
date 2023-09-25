@@ -2,7 +2,7 @@
 x86 32-bit kernel & operating system
 
 # checklist
-- [ ] GDT
+- [x] GDT
 - [ ] IDT
 - [ ] Keyboard I/O
 
