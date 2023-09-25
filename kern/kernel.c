@@ -12,7 +12,7 @@ void kernel_main(void)
 	/* Initialize terminal interface */
 	terminal_initialize(VGA_COLOR_CYAN, VGA_COLOR_BLACK);
 	 
-	printf("Hello {s}");
+	printf("Hello {s}", "World");
 
 }
 

@@ -1,3 +1,5 @@
 build/
 build/*
 log.txt
+iso/
+iso/boot/neobird.bin
