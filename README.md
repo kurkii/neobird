@@ -3,7 +3,8 @@ x86 32-bit kernel & operating system
 
 # checklist
 - [x] GDT
-- [ ] IDT
+- [x] IDT 
+- [ ] PICs
 - [ ] Keyboard I/O
 
 # how to compile

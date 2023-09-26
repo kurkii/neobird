@@ -15,10 +15,18 @@
 #define LENGTH_LONG         3
 #define LENGTH_LONG_LONG    4
 
-
-int *printf_number(int *argp, int length, bool signd, int radix);
-
-
+/* 
+    printf()
+    params:
+        string
+        arguments
+    
+    available format specifiers:
+        {i}, {d} - interger
+        {s}      - string
+        {c}      - char
+        {k}      - color
+ */
 int printf(const char *format_string, ...){
 
     int state = NORMAL;
@@ -39,6 +47,12 @@ int printf(const char *format_string, ...){
                 break;
             case FORMAT_SPECIFIER:
                 switch (current) {
+                    case 'n':
+                        terminal_puts("\n");
+                        break;
+                    case 'k':
+                        terminal_color = (va_arg(a_list, int));
+                        break;
                     case 'd':
                     case 'i':
                         //terminal_puti((va_arg(a_list, int)));

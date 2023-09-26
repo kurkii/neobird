@@ -1,7 +1,7 @@
 
-global set_gdt
+global asm_set_gdt
 extern gdtp
-set_gdt:
+asm_set_gdt:
     lgdt [gdtp]
     mov ax, 0x10    ; offset in GDT to data seg
     mov ds, ax

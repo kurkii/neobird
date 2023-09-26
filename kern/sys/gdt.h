@@ -17,4 +17,5 @@ typedef struct
 } __attribute__((packed)) gdtptr;
 
 void gdt_set_gate(int num, unsigned long base, unsigned long limit, unsigned char access, unsigned char gran);
+extern void asm_set_gdt();
 void gdt_init();
