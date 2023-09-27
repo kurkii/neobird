@@ -6,7 +6,7 @@ __attribute__((aligned(0x10))) static idtentry idt[256];     // our IDTs
 idt_r idtpr;            // the idtr ptr
 
 
-void idt_set_gate(unsigned char num, unsigned long base, unsigned char type){
+void idt_set_gate(unsigned char num, unsigned int base, unsigned char type){
 
     idt[num].offset1        = (base & 0xFFFF);      // first 16 bits
     idt[num].segselector    = 0x08;                 // kernel offset in GDT
@@ -25,9 +25,7 @@ void idt_init(void){
     idtpr.limit = (sizeof(idtentry) * 256) -1;      // setup IDT pointer, 256 = max descriptors
     idtpr.base = (uintptr_t)&idt[0];
 
-    for(uint8_t vector = 0; vector < 32; vector++){
-        idt_set_gate(vector, (unsigned long)isr_stub_table[vector], 0x8E);
-    }
+    isrs_init();
 
     idt_load();
 }

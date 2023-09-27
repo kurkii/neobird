@@ -97,3 +97,15 @@ int count_digits(int num){
     
 } */
 
+void terminal_clear(){
+	for(int i = 0; i < VGA_WIDTH; i++){
+		for(int j = 0; j < VGA_HEIGHT; j++){
+			terminal_putchar(' ');
+		}
+	}
+
+	terminal_column = 0;
+	terminal_row = 0;
+
+}
+

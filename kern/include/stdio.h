@@ -31,5 +31,6 @@ void terminal_putchar(char c);
 void terminal_puts(char *str);
 void terminal_puti(int i);
 void terminal_newline();
+void terminal_clear();
 
 

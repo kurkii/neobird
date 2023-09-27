@@ -24,7 +24,7 @@ void gdt_set_gate(int num, unsigned long base, unsigned long limit, unsigned cha
 void gdt_init(){
 
     gdtp.limit = (sizeof(gdtentry) * 3 ) - 1;
-    gdtp.base = (uint32_t)&gdt;
+    gdtp.base = (long)&gdt;                                   // uint32_t
 
     gdt_set_gate(0, 0, 0, 0, 0); // null descriptor
 

@@ -14,12 +14,21 @@ typedef struct{
 } __attribute__((packed)) idt_r;
 
 extern void *isr_stub_table[];
-__attribute__((noreturn)) void exception_handler(void);
 
-void idt_set_gate(unsigned char num, unsigned long base, unsigned char type);
-void idt_init(void);
-extern void asm_idt_load();
 
+void idt_set_gate(unsigned char num, unsigned int base, unsigned char type);
+void idt_init();
+void isrs_init(void);
+
+struct regs
+{
+    unsigned int gs, fs, es, ds;      /* pushed the segs last */
+    unsigned int edi, esi, ebp, esp, ebx, edx, ecx, eax;  /* pushed by 'pusha' */
+    unsigned int int_no, err_code;    /* our 'push byte #' and ecodes do this */
+    unsigned int eip, cs, eflags, useresp, ss;   /* pushed by the processor automatically */ 
+};
+
+__attribute__((noreturn)) void exception_handler(struct regs *r);
 
 
 

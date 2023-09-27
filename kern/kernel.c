@@ -19,7 +19,6 @@ void kernel_main(void)
 	idt_init();
 	kernel_msg('s', "IDT Loaded");
 
-
 	/* Initialize terminal interface */
 
 }
