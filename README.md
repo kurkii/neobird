@@ -1,4 +1,5 @@
-# ABANDONED, check my new [64 bit continuation](https://github.com/kurkii/neobird64)
+# ABANDONED
+check my new [64 bit continuation](https://github.com/kurkii/neobird64)
 
 
 # neobird
