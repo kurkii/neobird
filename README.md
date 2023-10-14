@@ -1,3 +1,6 @@
+# ABANDONED, check my new [64 bit continuation](https://github.com/kurkii/neobird64)
+
+
 # neobird
 x86 32-bit kernel & operating system
 
